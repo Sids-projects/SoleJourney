@@ -1,0 +1,31 @@
+<div class="card-container">
+  <div class="card-heart">
+    <i class="fa-regular fa-heart"></i>
+  </div>
+  <img [src]="imageInput" />
+  <ul class="tags">
+    <ng-container *ngFor="let badge of badgeInput">
+      <li>{{ badge }}</li>
+    </ng-container>
+  </ul>
+  <div>
+    <div class="name-prize">
+      <h3>{{ brand }}</h3>
+      <h3>{{ prize }}</h3>
+    </div>
+    <div class="name-prize">
+      <p>{{ type }}</p>
+      <p>
+        <s>{{ discount }}</s>
+      </p>
+    </div>
+  </div>
+  <div class="colors">
+    <p>Colors</p>
+    <ul>
+      <ng-container *ngFor="let color of color">
+        <li [class]="color"></li>
+      </ng-container>
+    </ul>
+  </div>
+</div>

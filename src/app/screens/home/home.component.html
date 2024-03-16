@@ -72,4 +72,18 @@
       <i class="fa-solid fa-filter"></i> &nbsp;&nbsp; <span>Filter</span>
     </p>
   </section>
+
+  <section class="products">
+    <ng-container *ngFor="let data of products">
+      <app-product-card
+        [imageInput]="data.image"
+        [brand]="data.brand"
+        [prize]="data.prize"
+        [type]="data.type"
+        [discount]="data.discount"
+        [badgeInput]="data.badges"
+        [color]="data.colors"
+      ></app-product-card>
+    </ng-container>
+  </section>
 </main>

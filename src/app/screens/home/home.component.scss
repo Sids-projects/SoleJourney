@@ -64,7 +64,7 @@ main {
 
     .carousal-sec {
       box-shadow: 0 0 6px rgba(0, 0, 0, 0.156);
-      width: 350px;
+      width: 330px;
       border-radius: 6px;
 
       img {
@@ -129,5 +129,15 @@ main {
         color: white;
       }
     }
+  }
+
+  .products {
+    margin-top: 16px;
+    padding: 26px 30px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 40px;
   }
 }

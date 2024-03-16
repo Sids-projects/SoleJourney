@@ -12,14 +12,31 @@
   </div>
   <div class="nav-links">
     <a href="#" class="link-active">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">Blog</a>
-    <a href="#">About Us</a>
-    <a href="#">Contact Us</a>
+    <a routerLink="shop-route">Shop</a>
+    <a routerLink="blog-route">Blog</a>
+    <a routerLink="aboutUs-route">About Us</a>
   </div>
   <div class="nav-menus">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <i class="fa-solid fa-cart-shopping"></i>
+    <div class="dropdown">
+      <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </a>
+      <ul class="dropdown-menu">
+        <ol class="dropdown-cartItem">
+          <li class="dropdown-cartTitle">Bag</li>
+          <li class="dropdown-cartProducts">
+            <a class="dropdown-item" href="#">Blue Snicker Shoe</a>
+            <i class="fa-solid fa-trash"></i>
+          </li>
+          <li class="dropdown-cartProducts">
+            <a class="dropdown-item" href="#">Blue Snicker Shoe</a>
+            <i class="fa-solid fa-trash"></i>
+          </li>
+          <li><button>View Cart</button></li>
+        </ol>
+      </ul>
+    </div>
+    <i class="fa-solid fa-heart"></i>
     <i class="fa-solid fa-user"></i>
   </div>
 </nav>

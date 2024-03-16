@@ -60,10 +60,60 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 16px;
+    gap: 12px;
+
+    .dropdown a {
+      color: black !important;
+    }
 
     i {
       font-size: 20px;
+    }
+
+    .dropdown-cartItem {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      list-style: none;
+      padding: 4px 10px 10px 10px;
+
+      li {
+        width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        text-align: left;
+      }
+
+      .dropdown-cartProducts {
+        background-color: #f3f3f3;
+        padding: 4px;
+        border-radius: 6px;
+      }
+
+      i {
+        font-size: 12px;
+        margin-right: 10px;
+      }
+
+      .dropdown-cartTitle {
+        font-size: 12px;
+      }
+
+      .dropdown-item {
+        font-size: 14px;
+      }
+
+      button {
+        width: 100%;
+        font-size: 14px;
+        border: none;
+        padding: 6px 16px !important;
+        border-radius: 6px;
+        background-color: black;
+        color: white;
+      }
     }
   }
 }

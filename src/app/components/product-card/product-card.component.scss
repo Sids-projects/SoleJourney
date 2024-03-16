@@ -1,0 +1,103 @@
+.card-container {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.152);
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 6px;
+  padding: 10px;
+
+  .card-heart {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    i {
+      font-size: 20px;
+    }
+  }
+
+  img {
+    width: 200px;
+  }
+
+  .tags {
+    list-style: none;
+    padding: 0 !important;
+    margin: 4px 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    li {
+      font-size: 10px;
+      background-color: black;
+      color: white;
+      max-width: fit-content;
+      padding: 4px 8px;
+      border-radius: 50px;
+    }
+  }
+
+  .name-prize {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .colors {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 4px;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    li {
+      width: 12px;
+      height: 12px;
+      border-radius: 50px;
+    }
+
+    p {
+      font-size: 14px !important;
+      font-weight: 700 !important;
+    }
+
+    .red {
+      background-color: rgb(247, 97, 97);
+    }
+
+    .blue {
+      background-color: rgb(122, 122, 249);
+    }
+
+    .hotpink {
+      background-color: hotpink;
+    }
+
+    .color-active {
+      border: 2px solid rgb(46, 46, 46);
+    }
+  }
+}
