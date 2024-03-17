@@ -1,31 +1,34 @@
 <div class="card-container">
-  <div class="card-heart">
-    <i class="fa-regular fa-heart"></i>
+  <div class="card-heart" (click)="heartMethod()">
+    <i class="fa-regular fa-heart" *ngIf="heartNotSelected"></i>
+    <i class="fa-solid fa-heart heart-selected" *ngIf="heartSelected"></i>
   </div>
   <img [src]="imageInput" />
-  <ul class="tags">
-    <ng-container *ngFor="let badge of badgeInput">
-      <li>{{ badge }}</li>
-    </ng-container>
-  </ul>
-  <div>
-    <div class="name-prize">
-      <h3>{{ brand }}</h3>
-      <h3>{{ prize }}</h3>
-    </div>
-    <div class="name-prize">
-      <p>{{ type }}</p>
-      <p>
-        <s>{{ discount }}</s>
-      </p>
-    </div>
-  </div>
-  <div class="colors">
-    <p>Colors</p>
-    <ul>
-      <ng-container *ngFor="let color of color">
-        <li [class]="color"></li>
+  <div class="card-content">
+    <ul class="tags">
+      <ng-container *ngFor="let badge of badgeInput">
+        <li>{{ badge }}</li>
       </ng-container>
     </ul>
+    <div>
+      <div class="name-prize">
+        <h3>{{ brand }}</h3>
+        <h3>${{ prize }}</h3>
+      </div>
+      <div class="name-prize">
+        <p>{{ type }}</p>
+        <p>
+          <s>${{ discount }}</s>
+        </p>
+      </div>
+    </div>
+    <div class="colors">
+      <p>Colors</p>
+      <ul>
+        <ng-container *ngFor="let color of color">
+          <li [class]="color"></li>
+        </ng-container>
+      </ul>
+    </div>
   </div>
 </div>

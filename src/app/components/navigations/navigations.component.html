@@ -11,36 +11,62 @@
     <p>SoleJourney</p>
   </div>
   <div class="nav-links">
-    <a href="#" class="link-active">Home</a>
-    <a routerLink="shop-route">Shop</a>
-    <a routerLink="blog-route">Blog</a>
-    <a routerLink="aboutUs-route">About Us</a>
+    <a
+      *ngFor="let data of navTitles"
+      [routerLink]="data.path"
+      [ngClass]="data.navActive ? 'link-active' : ''"
+      (click)="navMethod(data.path)"
+      >{{ data.title }}</a
+    >
   </div>
   <div class="nav-menus">
     <div class="dropdown">
       <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-heart"></i>
       </a>
-      <ul class="dropdown-menu">
-        <ol class="dropdown-cartItem">
-          <li class="dropdown-cartTitle">Bag</li>
-          <li class="dropdown-cartProducts">
-            <a class="dropdown-item" href="#">Blue Snicker Shoe</a>
-            <i class="fa-solid fa-trash"></i>
-          </li>
-          <li class="dropdown-cartProducts">
-            <a class="dropdown-item" href="#">Blue Snicker Shoe</a>
-            <i class="fa-solid fa-trash"></i>
-          </li>
-          <li><button>View Cart</button></li>
-        </ol>
-      </ul>
+      <div class="dropdown-menu">
+        <div class="dropdown-content">
+          <p class="dd-Title">Wishlist</p>
+          <div class="dd-Items">
+            <div class="dd-itemList">
+              <div class="dd-itemListTitle">
+                <p>Items</p>
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <img src="./../../../assets/img/Shoe-1.png" />
+              <p class="dd-itemName">Blue Snicker Shoe</p>
+            </div>
+            <div class="dd-itemList">
+              <div class="dd-itemListTitle">
+                <p>Items</p>
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <img src="./../../../assets/img/Shoe-1.png" />
+              <p class="dd-itemName">Blue Snicker Shoe</p>
+            </div>
+            <div class="dd-itemList">
+              <div class="dd-itemListTitle">
+                <p>Items</p>
+                <i class="fa-solid fa-trash"></i>
+              </div>
+              <img src="./../../../assets/img/Shoe-1.png" />
+              <p class="dd-itemName">Blue Snicker Shoe</p>
+            </div>
+          </div>
+          <button>View Cart</button>
+        </div>
+      </div>
     </div>
-    <i class="fa-solid fa-heart"></i>
-    <i class="fa-solid fa-user"></i>
+    <i
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasRight"
+      aria-controls="offcanvasRight"
+      class="fa-solid fa-cart-shopping"
+    ></i>
   </div>
 </nav>
 
+<!-- Navigation Cnavas -->
 <div
   class="offcanvas offcanvas-start"
   data-bs-scroll="true"
@@ -48,9 +74,10 @@
   tabindex="-1"
   id="offcanvasScrolling"
   aria-labelledby="offcanvasScrollingLabel"
+  style="width: 350px"
 >
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Categories</h5>
+    <p class="offcanvas-title" id="offcanvasScrollingLabel">Categories</p>
     <button
       type="button"
       class="btn-close"
@@ -59,6 +86,40 @@
     ></button>
   </div>
   <div class="offcanvas-body">
-    <p>Try scrolling the rest of the page to see this option in action.</p>
+    <div class="leftNav-content" *ngFor="let data of navLeftContent">
+      <h3 class="leftNav-title">{{ data.title }}</h3>
+      <div class="list-group">
+        <button
+          type="button"
+          class="list-group-item list-group-item-action"
+          *ngFor="let dataList of data.list"
+        >
+          <span>
+            <img [src]="'../../../assets/icons/' + dataList.icon" />
+            {{ dataList.title }}
+          </span>
+          <i class="fa-solid fa-caret-right"></i>
+        </button>
+      </div>
+    </div>
   </div>
+</div>
+
+<!-- Wishlist Canvas -->
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="offcanvas-header">
+    <p class="offcanvas-title" id="offcanvasRightLabel"><b>Bag</b></p>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">...</div>
 </div>

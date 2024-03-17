@@ -11,10 +11,11 @@ import { AboutusComponent } from './screens/aboutus/aboutus.component';
 import { ProfileComponent } from './screens/profile/profile.component';
 import { RouteOutletComponent } from './screens/route-outlet/route-outlet.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, NavigationsComponent, HomeComponent, ShopComponent, BlogComponent, AboutusComponent, ProfileComponent, RouteOutletComponent, ProductCardComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

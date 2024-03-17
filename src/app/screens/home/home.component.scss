@@ -15,36 +15,45 @@ main {
       justify-content: center;
       gap: 4px;
       text-align: center;
-      background: radial-gradient(
-            calc(1.28 * 35px + 13.13px / 2) at left 50% bottom calc(-0.8 * 35px),
-            rgba(71, 74, 255, 0) calc(100% - 13.13px),
-            rgba(209, 209, 209, 0.12) calc(101% - 13.13px) 100%,
-            #0000 101%
+      background: linear-gradient(
+          45deg,
+          #0000 calc(25% / 3),
+          #fbfbfb 0 calc(50% / 3),
+          #0000 0 calc(250% / 3),
+          #fbfbfb 0 calc(275% / 3),
+          #0000 0
+        ),
+        linear-gradient(
+          45deg,
+          #fbfbfb calc(25% / 3),
+          #0000 0 calc(50% / 3),
+          #fbfbfb 0 25%,
+          #0000 0 75%,
+          #fbfbfb 0 calc(250% / 3),
+          #0000 0 calc(275% / 3),
+          #fbfbfb 0
+        ),
+        linear-gradient(
+          -45deg,
+          #0000 calc(25% / 3),
+          #fbfbfb 0 calc(50% / 3),
+          #0000 0 calc(250% / 3),
+          #fbfbfb 0 calc(275% / 3),
+          #0000 0
+        ),
+        linear-gradient(
+            -45deg,
+            #fbfbfb calc(25% / 3),
+            #0000 0 calc(50% / 3),
+            #fbfbfb 0 25%,
+            #0000 0 75%,
+            #fbfbfb 0 calc(250% / 3),
+            #0000 0 calc(275% / 3),
+            #fbfbfb 0
           )
-          calc(2 * 35px) calc(-1 * calc(1.5 * 35px + 13.13px)),
-        radial-gradient(
-            calc(1.28 * 35px + 13.13px / 2) at left 50% bottom calc(-0.8 * 35px),
-            rgba(173, 174, 255, 0) calc(100% - 13.13px),
-            rgba(209, 209, 209, 0.12) calc(101% - 13.13px) 100%,
-            #0000 101%
-          )
-          calc(-1 * 35px) calc(calc(1.5 * 35px + 13.13px) / -2),
-        radial-gradient(
-            calc(1.28 * 35px + 13.13px / 2) at left 50% top calc(-0.8 * 35px),
-            rgba(173, 174, 255, 0) calc(100% - 13.13px),
-            rgba(209, 209, 209, 0.12) calc(101% - 13.13px) 100%,
-            #0000 101%
-          )
-          0 calc(1.5 * 35px + 13.13px),
-        radial-gradient(
-            calc(1.28 * 35px + 13.13px / 2) at left 50% top calc(-0.8 * 35px),
-            rgba(71, 74, 255, 0) calc(100% - 13.13px),
-            rgba(209, 209, 209, 0.12) calc(101% - 13.13px) 100%,
-            #0000 101%
-          )
-          35px calc(calc(1.5 * 35px + 13.13px) / 2),
-        linear-gradient(rgba(71, 74, 255, 0) 50%, rgba(173, 174, 255, 0) 0);
-      background-size: calc(4 * 35px) calc(1.5 * 35px + 13.13px);
+          #ffffff;
+      background-size: 200px 200px;
+      background-position: 0 0, 100px 100px;
 
       img {
         width: 250px;
@@ -135,9 +144,27 @@ main {
     margin-top: 16px;
     padding: 26px 30px;
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
     align-items: center;
     justify-content: space-evenly;
     gap: 40px;
+  }
+
+  @media only screen and (max-width: 1330px) {
+    .products {
+      grid-template-columns: repeat(2, auto);
+    }
+  }
+
+  @media only screen and (max-width: 895px) {
+    .products {
+      grid-template-columns: repeat(3, auto);
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .products {
+      grid-template-columns: repeat(2, auto);
+    }
   }
 }

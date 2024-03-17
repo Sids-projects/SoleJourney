@@ -13,4 +13,11 @@ export class ProductCardComponent {
   @Input() discount: number = 0;
   @Input() badgeInput: any = ['Running Show', 'Mens'];
   @Input() color: any = ['red', 'blue', 'green'];
+  heartNotSelected: boolean = true;
+  heartSelected: boolean = false;
+
+  heartMethod() {
+    this.heartNotSelected = !this.heartNotSelected;
+    this.heartSelected = !this.heartSelected;
+  }
 }

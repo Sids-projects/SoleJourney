@@ -14,7 +14,7 @@ export class HomeComponent {
       type: 'Running Shoe',
       discount: 10,
       badges: ['Running Shoe', 'Unisex'],
-      colors: ['black', 'grey', 'neon green'],
+      colors: ['black', 'grey', 'green'],
     },
     {
       image: '../../../assets/img/Shoe-2.png',
@@ -36,7 +36,7 @@ export class HomeComponent {
     },
     {
       image: '../../../assets/img/Shoe-1.png',
-      brand: 'Apex Athletics',
+      brand: 'Nike',
       type: 'Cross-Training Shoe',
       prize: 200,
       discount: 30,
