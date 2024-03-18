@@ -1,0 +1,46 @@
+.blog-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  text-align: center;
+  margin-top: 40px;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 40px;
+  }
+
+  p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+}
+
+.blog-content {
+  padding: 40px 50px;
+
+  .cardView-xl {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.139);
+    max-width: 400px;
+    width: 100%;
+    border-radius: 6px;
+
+    img {
+      width: 100%;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .cardView-content {
+      padding: 20px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 800;
+    }
+  }
+}
