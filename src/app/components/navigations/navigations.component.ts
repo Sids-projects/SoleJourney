@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-navigations',
@@ -8,67 +9,18 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./navigations.component.scss'],
 })
 export class NavigationsComponent implements OnInit {
-  navTitles: any = [
-    { title: 'Home', path: 'home-route', navActive: false },
-    { title: 'Shop', path: 'shop-route', navActive: false },
-    { title: 'Blog', path: 'blog-route', navActive: false },
-    { title: 'AboutUs', path: 'aboutUs-route', navActive: false },
-  ];
+  navTitles: any = [];
+  navLeftContent: any = [];
 
-  navLeftContent: any = [
-    {
-      title: "Men's Shoes",
-      list: [
-        { title: 'Casual Shoes', icon: 'casual-shoe.svg' },
-        { title: 'Formal Shoes', icon: 'casual-shoe.svg' },
-        { title: 'Sports Shoes', icon: 'casual-shoe.svg' },
-        { title: 'Boots', icon: 'casual-shoe.svg' },
-        { title: 'Sandals & Flip Flops', icon: 'casual-shoe.svg' },
-      ],
-    },
-    {
-      title: "Women's Shoes",
-      list: [
-        { title: 'Flats & Ballerinas', icon: 'casual-shoe.svg' },
-        { title: 'Heels', icon: 'casual-shoe.svg' },
-        { title: 'Sports Shoes', icon: 'casual-shoe.svg' },
-        { title: 'Boots', icon: 'casual-shoe.svg' },
-        { title: 'Sandals & Flip Flops', icon: 'casual-shoe.svg' },
-      ],
-      cssMargin: 'mt-4',
-    },
-    {
-      title: "Kids' Shoes",
-      list: [
-        { title: 'Boys', icon: 'casual-shoe.svg' },
-        { title: 'Girls', icon: 'casual-shoe.svg' },
-        { title: 'Toddlers', icon: 'casual-shoe.svg' },
-      ],
-      cssMargin: 'mt-4',
-    },
-    {
-      title: 'Specialty Shoes',
-      list: [
-        { title: 'Eco-Friendly', icon: 'casual-shoe.svg' },
-        { title: 'Vegan', icon: 'casual-shoe.svg' },
-        { title: 'Orthopedic', icon: 'casual-shoe.svg' },
-      ],
-      cssMargin: 'mt-4',
-    },
-    {
-      title: 'Accessories',
-      list: [
-        { title: 'Socks', icon: 'casual-shoe.svg' },
-        { title: 'Shoe Care', icon: 'casual-shoe.svg' },
-        { title: 'Insoles', icon: 'casual-shoe.svg' },
-      ],
-      cssMargin: 'mt-4',
-    },
-  ];
-
-  constructor(private router: Router, private activeRoute: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private activeRoute: ActivatedRoute,
+    private sharedService: SharedService
+  ) {}
 
   ngOnInit() {
+    this.navTitles = this.sharedService.navTitles;
+    this.navLeftContent = this.sharedService.navLeftContent;
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {

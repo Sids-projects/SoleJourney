@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-home',
@@ -6,105 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  products: any = [
-    {
-      image: '../../../assets/img/Shoe-1.png',
-      brand: 'Swiftstride',
-      prize: 180,
-      type: 'Running Shoe',
-      discount: 10,
-      badges: ['Running Shoe', 'Unisex'],
-      colors: ['black', 'grey', 'green'],
-    },
-    {
-      image: '../../../assets/img/Shoe-2.png',
-      brand: 'Trailblazers',
-      type: 'Hiking Boot',
-      prize: 320,
-      discount: 40,
-      badges: ['Hiking Boot', 'Mens'],
-      colors: ['brown', 'tan', 'olive green'],
-    },
-    {
-      image: '../../../assets/img/Shoe-3.png',
-      brand: 'Sojourn',
-      type: 'Travel Sneaker',
-      prize: 140,
-      discount: 0,
-      badges: ['Travel Sneaker', 'Womens'],
-      colors: ['navy blue', 'beige', 'rose gold'],
-    },
-    {
-      image: '../../../assets/img/Shoe-1.png',
-      brand: 'Nike',
-      type: 'Cross-Training Shoe',
-      prize: 200,
-      discount: 30,
-      badges: ['Cross-Training', 'Unisex'],
-      colors: ['white', 'black', 'red accents'],
-    },
-    {
-      image: '../../../assets/img/Shoe-2.png',
-      brand: 'Curve',
-      type: 'Platform Sneaker',
-      prize: 120,
-      discount: 15,
-      badges: ['Platform Sneaker', 'Womens'],
-      colors: ['cream', 'pastel pink', 'baby blue'],
-    },
-    {
-      image: '../../../assets/img/Shoe-3.png',
-      brand: 'Strides',
-      type: 'Walking Shoe',
-      prize: 160,
-      discount: 5,
-      badges: ['Walking Shoe', 'Unisex'],
-      colors: ['black', 'grey', 'teal'],
-    },
-    {
-      image: '../../../assets/img/Shoe-2.png',
-      brand: 'SureStep',
-      type: 'Work Boot',
-      prize: 240,
-      discount: 10,
-      badges: ['Work Boot', 'Mens'],
-      colors: ['brown', 'black', 'steel toe'],
-    },
-    {
-      image: '../../../assets/img/Shoe-1.png',
-      brand: 'Zenith',
-      type: 'Basketball Shoe',
-      prize: 220,
-      discount: 25,
-      badges: ['Basketball', 'Unisex'],
-      colors: ['white', 'blue', 'red accents'],
-    },
-    {
-      image: '../../../assets/img/Shoe-2.png',
-      brand: 'Wanderlust',
-      type: 'Chelsea Boot',
-      prize: 190,
-      discount: 0,
-      badges: ['Chelsea Boot', 'Mens'],
-      colors: ['brown leather', 'black leather'],
-    },
-    {
-      image: '../../../assets/img/Shoe-3.png',
-      brand: 'Sole Mates',
-      type: 'Casual Sneaker',
-      prize: 110,
-      discount: 20,
-      badges: ['Casual Sneaker', 'Unisex'],
-      colors: ['white', 'navy blue', 'yellow accents'],
-    },
-    {
-      image: '../../../assets/img/Shoe-1.png',
-      brand: 'Sky High',
-      type: 'Ankle Boot',
-      prize: 150,
-      discount: 10,
-      badges: ['Ankle Boot', 'Womens'],
-      colors: ['black', 'camel', 'snake print'],
-    },
-  ];
+  products: any = [];
+
+  constructor(private sharedService: SharedService) {}
+
+  ngOnInit() {
+    this.products = this.sharedService.products;
+  }
 }

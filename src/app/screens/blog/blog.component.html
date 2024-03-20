@@ -5,49 +5,53 @@
 
 <section class="blog-content">
   <div class="cardView-xl">
-    <img src="./../../../assets/blog/blog_1.jpg" />
+    <img [src]="'./../../../assets/blog/' + blogContent.blogPost.img" />
     <div class="cardView-content">
-      <h3>5 Tips to Keep Your Sneakers Looking Brand New</h3>
+      <h3>{{ blogContent.blogPost.title }}</h3>
       <p>
-        Dive into the secrets of sneaker maintenance. From cleaning techniques
-        to storage hacks, we'll show you how to keep your kicks looking fresh
-        for longer.
+        {{ blogContent.blogPost.content }}
       </p>
     </div>
   </div>
   <div class="card-column">
-    <div class="cardView-xxl">
-      <img src="./../../../assets/blog/blogNews-1.jpg" />
+    <div class="cardView-xxl" *ngFor="let data of blogContent.news">
+      <img [src]="'./../../../assets/blog/' + data.img" />
       <div class="cardView-content">
-        <h3>5 Tips to Keep Your Sneakers Looking Brand New</h3>
+        <h3>{{ data.title }}</h3>
         <p>
-          Dive into the secrets of sneaker maintenance. From cleaning techniques
-          to storage hacks, we'll show you how to keep your kicks looking fresh
-          for longer.
+          {{ data.content }}
         </p>
       </div>
     </div>
-    <div class="cardView-xxl">
-      <img src="./../../../assets/blog/blogNews-2.jpg" />
-      <div class="cardView-content">
-        <h3>5 Tips to Keep Your Sneakers Looking Brand New</h3>
-        <p>
-          Dive into the secrets of sneaker maintenance. From cleaning techniques
-          to storage hacks, we'll show you how to keep your kicks looking fresh
-          for longer.
-        </p>
+  </div>
+</section>
+
+<div class="news-head">
+  <p>Get updates from SoleJourney</p>
+  <h2>Updates & News</h2>
+</div>
+
+<section class="news-container">
+  <div class="news-list">
+    <div *ngFor="let data of blogContent.newsPostList" class="cardView-xxxl">
+      <div class="news-list-head">
+        <p class="news-tags">{{ data.tags }}</p>
+        <p class="news-date">{{ data.date }}</p>
+      </div>
+      <div class="news-list-content">
+        <h3>{{ data.title }}</h3>
+        <p class="news-content">{{ data.content }}</p>
       </div>
     </div>
-    <div class="cardView-xxl">
-      <img src="./../../../assets/blog/blogNews-3.jpg" />
-      <div class="cardView-content">
-        <h3>5 Tips to Keep Your Sneakers Looking Brand New</h3>
-        <p>
-          Dive into the secrets of sneaker maintenance. From cleaning techniques
-          to storage hacks, we'll show you how to keep your kicks looking fresh
-          for longer.
-        </p>
+  </div>
+  <div class="discounts">
+    <div class="cardView-sm">
+      <h3>Nike Shoes</h3>
+      <p>30% Offer</p>
+      <div class="img-div">
+        <img src="./../../../assets/blog/discount-1.jpg" />
       </div>
+      <div class="overlay"></div>
     </div>
   </div>
 </section>
