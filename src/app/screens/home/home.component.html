@@ -62,9 +62,15 @@
       <p class="filter-active">
         <i class="fa-solid fa-border-all"></i> &nbsp; All
       </p>
-      <p><i class="fa-solid fa-child"></i> &nbsp; Mens</p>
-      <p><i class="fa-solid fa-child-dress"></i> &nbsp; Womens</p>
-      <p><i class="fa-solid fa-child-reaching"></i> &nbsp; Kids</p>
+      <p (click)="filterShoes('Mens')">
+        <i class="fa-solid fa-child"></i> &nbsp; Mens
+      </p>
+      <p (click)="filterShoes('Womens')">
+        <i class="fa-solid fa-child-dress"></i> &nbsp; Womens
+      </p>
+      <p (click)="filterShoes('Unisex')">
+        <i class="fa-solid fa-child-reaching"></i> &nbsp; Unisex
+      </p>
       <p><i class="fa-solid fa-socks"></i> &nbsp; Accessories</p>
       <p><i class="fa-solid fa-star"></i> &nbsp; Specialty</p>
     </div>
@@ -74,7 +80,7 @@
   </section>
 
   <section class="products">
-    <ng-container *ngFor="let data of products">
+    <ng-container *ngFor="let data of filteredShoes">
       <app-product-card
         [imageInput]="data.image"
         [brand]="data.brand"

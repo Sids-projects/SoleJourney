@@ -14,6 +14,7 @@ export class SharedService {
       discount: 10,
       badges: ['Running Shoe', 'Unisex'],
       colors: ['black', 'grey', 'green'],
+      filter: 'Unisex',
     },
     {
       image: '../../../assets/img/Shoe-2.png',
@@ -23,6 +24,7 @@ export class SharedService {
       discount: 40,
       badges: ['Hiking Boot', 'Mens'],
       colors: ['brown', 'tan', 'olive green'],
+      filter: 'Mens',
     },
     {
       image: '../../../assets/img/Shoe-3.png',
@@ -32,6 +34,7 @@ export class SharedService {
       discount: 0,
       badges: ['Travel Sneaker', 'Womens'],
       colors: ['navy blue', 'beige', 'rose gold'],
+      filter: 'Womens',
     },
     {
       image: '../../../assets/img/Shoe-1.png',
@@ -41,6 +44,7 @@ export class SharedService {
       discount: 30,
       badges: ['Cross-Training', 'Unisex'],
       colors: ['white', 'black', 'red accents'],
+      filter: 'Unisex',
     },
     {
       image: '../../../assets/img/Shoe-2.png',
@@ -50,6 +54,7 @@ export class SharedService {
       discount: 15,
       badges: ['Platform Sneaker', 'Womens'],
       colors: ['cream', 'pastel pink', 'baby blue'],
+      filter: 'Womens',
     },
     {
       image: '../../../assets/img/Shoe-3.png',
@@ -59,6 +64,7 @@ export class SharedService {
       discount: 5,
       badges: ['Walking Shoe', 'Unisex'],
       colors: ['black', 'grey', 'teal'],
+      filter: 'Unisex',
     },
     {
       image: '../../../assets/img/Shoe-2.png',
@@ -68,6 +74,7 @@ export class SharedService {
       discount: 10,
       badges: ['Work Boot', 'Mens'],
       colors: ['brown', 'black', 'steel toe'],
+      filter: 'Mens',
     },
     {
       image: '../../../assets/img/Shoe-1.png',
@@ -77,6 +84,7 @@ export class SharedService {
       discount: 25,
       badges: ['Basketball', 'Unisex'],
       colors: ['white', 'blue', 'red accents'],
+      filter: 'Unisex',
     },
     {
       image: '../../../assets/img/Shoe-2.png',
@@ -86,6 +94,7 @@ export class SharedService {
       discount: 0,
       badges: ['Chelsea Boot', 'Mens'],
       colors: ['brown leather', 'black leather'],
+      filter: 'Mens',
     },
     {
       image: '../../../assets/img/Shoe-3.png',
@@ -95,6 +104,7 @@ export class SharedService {
       discount: 20,
       badges: ['Casual Sneaker', 'Unisex'],
       colors: ['white', 'navy blue', 'yellow accents'],
+      filter: 'Unisex',
     },
     {
       image: '../../../assets/img/Shoe-1.png',
@@ -104,6 +114,7 @@ export class SharedService {
       discount: 10,
       badges: ['Ankle Boot', 'Womens'],
       colors: ['black', 'camel', 'snake print'],
+      filter: 'Womens',
     },
   ];
 
